@@ -74,9 +74,11 @@ public class NumberConversion {
         else {
             Integer divisionResult = number / getDividerForNumber(numberLength(number));
             if (numberBetween20And100(number)) {
-                return wordForNumber.get(divisionResult * getDividerForNumber(numberLength(number))) + " " + wordForNumber.get((number - divisionResult * getDividerForNumber(numberLength(number))));
+                return wordForNumber.get(divisionResult * getDividerForNumber(numberLength(number)))
+                        + " " + wordForNumber.get((number - divisionResult * getDividerForNumber(numberLength(number))));
             } else {
-                return wordForNumber.get(divisionResult) + " " + getNameForNumber(numberLength(number)) + " " + toWord(number % getDividerForNumber(numberLength(number)));
+                return wordForNumber.get(divisionResult) + " " + getNameForNumber(numberLength(number))
+                        + " " + toWord(number % getDividerForNumber(numberLength(number)));
             }
         }
     }
@@ -89,8 +91,8 @@ public class NumberConversion {
         return number < 100 && number > 20;
     }
 
-    private String getNameForNumber(int numberlength) {
-        return nameMultiplierPairs.get(numberlength).getName();
+    private String getNameForNumber(int numberLength) {
+        return nameMultiplierPairs.get(numberLength).getName();
     }
 
     private int getDividerForNumber(Integer numberLength) {
